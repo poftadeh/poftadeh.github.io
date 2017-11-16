@@ -5,10 +5,10 @@
   var speed = 40; /* The speed/duration of the effect in milliseconds */
   var activeFunction = displayName;
 
-  document.querySelectorAll('h1').forEach(h1 => {
-    h1.classList.add('hide');
-  });
-  document.querySelector('nav').classList.add('hide');
+  // document.querySelectorAll('h1').forEach(h1 => {
+  //   h1.classList.add('hide');
+  // });
+  // document.querySelector('nav').classList.add('hide');
 
   typeWriter();
 
