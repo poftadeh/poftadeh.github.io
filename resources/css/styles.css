@@ -14,12 +14,74 @@ html {
   font-size: 20px;
   color: #ecf0f1;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 a {
   outline: none;
   text-decoration: none;
   color: inherit;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+
+/* ----------------------------------------------
+/* ANIMATIONS
+/* ----------------------------------------------*/
+
+.shift-left {
+  transform: translate(-20rem, 0);
+}
+
+.shift-down {
+  transform: translate(0, 5rem);
+}
+
+@keyframes fadeLeft {
+  0% {
+    transform: translate(-2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeRight {
+  0% {
+    transform: translate(2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.fadeLeft {
+  animation: fadeLeft 1.5s;
+}
+
+.fadeRight {
+  animation: fadeRight 1.5s;
+}
+
+.fadeIn {
+  animation: fadeIn 1.5s;
 }
 
 
@@ -31,12 +93,12 @@ h1,
 h2,
 h3 {
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.05rem;
   text-align: center;
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3.25rem;
   font-weight: 300;
 }
 
@@ -48,18 +110,16 @@ h2 {
 
 h2:after {
   display: block;
-  height: 2px;
+  height: 0.1rem;
   background-color: #e74c3c;
   content: " ";
-  width: 100px;
-  margin: 25px auto 30px auto;
+  width: 5rem;
+  margin: 1.2rem auto;
 }
 
 h3 {
   font-size: 1rem;
   font-weight: 400;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
 }
 
 
@@ -69,12 +129,12 @@ h3 {
 
 header {
   background-color: #3498db;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/alex.jpg);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #3498db;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: all 1s;
 }
 
 nav {
@@ -88,6 +148,8 @@ nav {
   height: 3rem;
   width: 100%;
   user-select: none;
+  transition: all 1s;
+  -webkit-backface-visibility: hidden;
 }
 
 .icon-nav {
@@ -110,9 +172,7 @@ nav {
 }
 
 .nav-link {
-/*  padding: 0.5rem;*/
-/*  border-radius: 6px;*/
-  padding-bottom: 5px;
+  padding-bottom: 0.1rem;
   transition: background-color 0.3s;
   position: relative;
 }
@@ -121,7 +181,7 @@ nav {
   content: "";
   position: absolute;
   width: 100%;
-  height: 2px;
+  height: 0.12rem;
   bottom: 0;
   left: 0;
   background-color: #fff;
@@ -138,35 +198,50 @@ nav {
   transform: scaleX(1);
 }
 
-/*
-.nav-options a:hover {
-  background-color: #e74c3c;
-  border: none;
-  animation: underline 1s;
-}
-*/
-
-@keyframes underline {
-  0% {
-    border-bottom: 1px solid white;
-  }
-  
-  80% {
-    border-bottom: 3px solid white;
-  }
-  
-  100% {
-    border-bottom: 4px solid white;
-  }
-}
-
-.placement {
-  visibility: hidden;
-}
 
 .hero-text {
   width: 100%;
-  padding-top: 12rem;
+  padding-top: 7rem;
+}
+
+.typing-line {
+  color: #e67e22
+}
+
+/*======================================
+/* COMPUTER GRAPHIC
+/*=====================================*/
+
+.computer {
+  padding-top: 2rem;
+}
+
+.case {
+  background-color: #34495e;
+  width: 18rem;
+  height: 13rem;
+  border-radius: 4px;
+  border: 1rem solid #2c3e50;
+}
+
+.column {
+  height: 2rem;
+  width: 7rem;
+  background-color: #2c3e50;
+  margin: 0 auto;
+}
+
+.stand {
+  height: 2rem;
+  width: 9rem;
+  background-color: #2c3e50;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+
+pre {
+  color: #ecf0f1;
+  height: 100%;
 }
 
 
@@ -177,6 +252,7 @@ nav {
 .section-projects {
   background-color: #ecf0f1;
   padding: 80px 0;
+  padding: 3.5rem 0;
 }
 
 .project-row {
@@ -184,22 +260,19 @@ nav {
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 auto;
-  max-width: 1300px;
+  max-width: 60rem;
 }
 
 .project-box {
   margin: 1rem;
   background-color: #2980b9;
   font-weight: 300;
-  height: 19rem;
   width: 15rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   line-height: 145%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   box-shadow: 0px 1px 1px #2980b9;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 .project-image {
@@ -210,36 +283,38 @@ nav {
 .project-description {
   font-size: 0.8rem;
   font-weight: 400;
-  margin: 0 15px;
-  height: 100px;
+  margin: 1rem 0.7rem;
+  height: 4rem;
 }
 
 .button-row {
   text-align: center;
   height: 2.25rem;
+  margin: 0.7rem 0;
 }
 
 .button-project {
   color: #ecf0f1;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   font-size: 0.7rem;
   font-weight: 700;
-  margin: 15px;
   cursor: pointer;
-  padding: 10px;
+  padding: 0.5rem;
   background-color: #e74c3c;
-  letter-spacing: 1px;
+  letter-spacing: 0.05rem;
   transition: all 0.3s;
   user-select: none;
   box-shadow: 0px 1px 1px #c0392b;
 }
 
+.button-project:nth-of-type(2) {
+  margin-left: 1.4rem;
+}
+
 .button-project:hover {
   box-shadow: 0px 0px 9px #ecf0f1;
 }
-
-
 
 
 /*=====================================
@@ -248,7 +323,7 @@ nav {
 
 .section-tech {
   background-color: #3498db;
-  padding: 80px 0;
+  padding: 2.2rem 0;
 }
 
 .header-tech {
@@ -262,7 +337,7 @@ nav {
 
 .tech-icon-row i {
   font-size: 3rem;
-  margin: 15px;
+  margin: 0.8rem;
   transition: all 0.3s;
 }
 
@@ -278,7 +353,7 @@ nav {
 
 .section-contact {
   background-color: #2c3e50;
-  padding: 80px 0 50px 0;
+  padding: 4rem 0;
   color: #95a5a6;
 }
 
@@ -305,16 +380,30 @@ nav {
 }
 
 .contact-row p {
-  margin: 15px 0;
+  margin: 0.8rem 0;
 }
 
 .icon-contact {
   font-size: 2.25rem;
   color: #95a5a6;
-  margin: 0 20px;
+  margin: 0 1rem;
   transition: all 0.3s;
 }
 
 .icon-contact:hover {
   color: #ecf0f1;
+}
+
+
+/*======================================
+/* RESPONSIVE DESIGN
+/*=====================================*/
+
+@media only screen and (max-width: 450px) {
+  html {
+    font-size: 13.5px;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
 }
