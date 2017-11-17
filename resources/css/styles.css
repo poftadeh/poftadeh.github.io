@@ -149,6 +149,7 @@ nav {
   width: 100%;
   user-select: none;
   transition: all 1s;
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
