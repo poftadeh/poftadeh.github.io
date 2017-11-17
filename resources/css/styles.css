@@ -12,6 +12,7 @@
 html {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
+  background-color: #ecf0f1;
   color: #ecf0f1;
   height: 100%;
   scroll-behavior: smooth;
@@ -71,7 +72,6 @@ a {
   }
 }
 
-
 .fadeLeft {
   animation: fadeLeft 1.5s;
 }
@@ -115,6 +115,7 @@ h2:after {
   content: " ";
   width: 5rem;
   margin: 1.2rem auto;
+  transition: all 1.5s;
 }
 
 h3 {
@@ -128,14 +129,15 @@ h3 {
 /*=====================================*/
 
 header {
-  background-color: #3498db;
+  background-color: #ecf0f1;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  transition: all 1s;
+  transition: all 0.5s;
 }
+
 
 nav {
   position: fixed;
@@ -198,15 +200,15 @@ nav {
   transform: scaleX(1);
 }
 
-
 .hero-text {
   width: 100%;
   padding-top: 7rem;
 }
 
 .typing-line {
-  color: #e67e22
+  color: #ecf0f1;
 }
+
 
 /*======================================
 /* COMPUTER GRAPHIC
@@ -239,11 +241,6 @@ nav {
   margin: 0 auto;
 }
 
-pre {
-  color: #ecf0f1;
-  height: 100%;
-}
-
 
 /*=====================================
 /* PROJECTS
@@ -253,6 +250,11 @@ pre {
   background-color: #ecf0f1;
   padding: 80px 0;
   padding: 3.5rem 0;
+  transition: all 1.5s;
+}
+
+.blue-background {
+  background-color: #3498db;
 }
 
 .project-row {
@@ -269,10 +271,8 @@ pre {
   font-weight: 300;
   width: 15rem;
   border: none;
-  border-radius: 5px;
   line-height: 145%;
-  box-shadow: 0px 1px 1px #2980b9;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+  transition: all 1.5s; 
 }
 
 .project-image {
@@ -324,6 +324,11 @@ pre {
 .section-tech {
   background-color: #3498db;
   padding: 2.2rem 0;
+  transition: all 1.5s;
+}
+
+.cloud-background {
+  background-color: #ecf0f1;
 }
 
 .header-tech {
@@ -355,6 +360,7 @@ pre {
   background-color: #2c3e50;
   padding: 4rem 0;
   color: #95a5a6;
+  transition: all 1.5s;
 }
 
 .contact-header {

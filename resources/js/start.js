@@ -1,18 +1,22 @@
 (function () {
 
-  var txt = '> node displayName.js\n\n'; /* The text */
+  var txt = '> node revealNav.js\n\n';
   var letters = 0;
-  var speed = 40; /* The speed/duration of the effect in milliseconds */
-  var activeFunction = displayName;
-
-  // document.querySelectorAll('h1').forEach(h1 => {
-  //   h1.classList.add('hide');
-  // });
-  // document.querySelector('nav').classList.add('hide');
+  var speed = 40; 
+  var activeFunction = revealNav;
 
   typeWriter();
 
+  function setBackground() {
+    document.querySelector('header').classList.add('blue-background')
 
+    txt = '> node displayName.js\n\n';
+    letters = 0;
+    activeFunction = displayName;
+    typeWriter();
+  }
+  
+  
   function displayTitle() {
     var title = document.querySelector('.title-heading');
 
@@ -20,9 +24,10 @@
 
     title.classList.add('fadeRight');
 
-    txt = '> node revealNav.js';
+    txt = '> Welcome :)';
     letters = 0;
-    activeFunction = revealNav;
+    speed = 100;
+    activeFunction = null;
     typeWriter();
   }
 
@@ -44,8 +49,12 @@
     
     nav.classList.remove('hide');
     nav.classList.add('fadeIn');
+    
+    txt = '> node setBackground.js\n\n';
+    letters = 0;
+    activeFunction = setBackground;
+    typeWriter();
   }
-
 
   function typeWriter() {
     if (letters < txt.length) {
@@ -53,7 +62,7 @@
       letters++;
       setTimeout(typeWriter, speed);
     } else {
-      activeFunction();
+      activeFunction ? activeFunction() : '';
     }
   }
 
