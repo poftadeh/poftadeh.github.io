@@ -138,7 +138,6 @@ header {
   transition: all 0.5s;
 }
 
-
 nav {
   position: fixed;
   top: 0;
@@ -272,7 +271,9 @@ nav {
   width: 15rem;
   border: none;
   line-height: 145%;
-  transition: all 1.5s; 
+  transition: all 1.5s;
+  box-shadow: 0 10px 6px -6px #777;
+  border-radius: 5px;
 }
 
 .project-image {
